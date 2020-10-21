@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FuraCode Nerd Font:pixelsize=16:antialias=true:autohint=true";
+static char *font = "FuraCode Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -97,33 +97,63 @@ unsigned int tabspaces = 8;
 float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
+// static const char *colorname[] = {
+// 	/* 8 normal colors */
+// 	"#1d1f21", // black
+// 	"#cc6666", // red
+// 	"#b5bd68", // green
+// 	"#f0c674", // yellow
+// 	"#81a2be", // blue
+// 	"#b294bb", // magenta
+// 	"#8abeb7", // cyan
+// 	"#c2c8c6", // white
+
+// 	/* 8 bright colors */
+// 	"#666666", // black
+// 	"#d54e53", // red
+// 	"#b9ca4a", // green
+// 	"#e7c547", // yello
+// 	"#7aa6da", // blue
+// 	"#c397d8", // magen
+// 	"#70c0b1", // cyan
+// 	"#eaeaea", // white
+
+// 	[255] = 0,
+
+// 	/* more colors can be added after 255 to use with DefaultXX */
+// 	"#aeafad", //Cursor
+// 	"#c5c8c6", //Foreground
+// 	"#1d1f21", //Background
+// };
+
+
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#1d1f21", // black
-	"#cc6666", // red
-	"#b5bd68", // green
-	"#f0c674", // yellow
-	"#81a2be", // blue
-	"#b294bb", // magenta
-	"#8abeb7", // cyan
-	"#c2c8c6", // white
+	"#282936", // black
+	"#ea51b2", // red
+	"#ebff87", // green
+	"#00f769", // yellow
+	"#62d6e8", // blue
+	"#b45bcf", // magenta
+	"#a1efe4", // cyan
+	"#e9e9f4", // white
 
 	/* 8 bright colors */
-	"#666666", // black
-	"#d54e53", // red
-	"#b9ca4a", // green
-	"#e7c547", // yello
-	"#7aa6da", // blue
-	"#c397d8", // magen
-	"#70c0b1", // cyan
-	"#eaeaea", // white
+	"#626483", // black
+	"#ea51b2", // red
+	"#ebff87", // green
+	"#00f769", // yello
+	"#62d6e8", // blue
+	"#b45bcf", // magen
+	"#a1efe4", // cyan
+	"#f7f7fb", // white
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#aeafad", //Cursor
-	"#c5c8c6", //Foreground
-	"#1d1f21", //Background
+	"#e9e9f4", //Cursor
+	"#e9e9f4", //Foreground
+	"#282936", //Background
 };
 
 
@@ -214,8 +244,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ ControlMask,          XK_equal,       zoom,           {.f = +1} },
+	{ ControlMask,          XK_minus,       zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
